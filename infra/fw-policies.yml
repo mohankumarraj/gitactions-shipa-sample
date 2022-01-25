@@ -1,0 +1,19 @@
+framework:
+  name: gha-policy
+  resources:
+    general:
+      setup:
+        provisioner: kubernetes
+      router: nginx
+      appQuota:
+        limit: "4"
+      security:
+        disableScan: true
+      networkPolicy:
+        ingress:
+          policy_mode: allow-all
+        egress:
+          policy_mode: allow-all
+        disableAppPolicies: false
+      access:
+        append: ["shipa-team"]

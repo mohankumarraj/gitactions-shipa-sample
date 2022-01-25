@@ -1,0 +1,31 @@
+app:
+  name: gha-app
+  teamowner: shipa-team
+  framework: gha-policy
+
+app-env:
+  app: gha-app
+  envs:
+    - name: CR_ENV1
+      value: test-1
+    - name: CR_ENV2
+      value: test-2
+    - name: CR_ENV3
+      value: test-3
+    - name: CR_ENV4
+      value: test-4
+  norestart: true
+  private: false
+
+network-policy:
+  app: gha-app
+  ingress:
+    policy_mode: allow-all
+  egress:
+    policy_mode: allow-all
+  restart_app: false
+
+app-deploy:
+  app: gha-app
+  image: ghcr.io/stefanprodan/podinfo:6.0.3
+  port: 9898

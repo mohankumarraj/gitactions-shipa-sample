@@ -1,0 +1,42 @@
+  cert_formatter:
+    needs: create_policies
+    runs-on: ubuntu-latest
+    name: Format Kubernetes Certificate
+    env:
+        CLUSTER_RAWCERTIFICATE: ${{ secrets.CLUSTER_CERTIFICATE }}
+    steps:
+     - shell: bash
+       run: |
+          echo $CLUSTER_RAWCERTIFICATE | sed 'N;s/\n/ /' | sed 's/ //g' > CACert.txt 
+     - name: Upload Formatted Cert
+       uses: actions/upload-artifact@v2
+       with:
+         name: formattedcert
+         path: CACert.txt
+  
+  connect_cluster:
+    needs: create_policies
+    runs-on: ubuntu-latest
+    name: Connect Policies and Clusters
+    steps:
+      - name: Grab Formatted Cert
+        uses: actions/download-artifact@v2
+        with:
+          name: formattedcert
+      - shell: bash
+        run: |
+          CLUSTER_CERTFORMATTED=`cat CACert.txt`
+          export CLUSTER_CERTFORMATTED
+          echo "Formatted Cert:-~> " $CLUSTER_CERTFORMATTED
+      - name: Checkout
+        uses: actions/checkout@v2 
+      - name: Connecting Policies
+        uses: shipa-corp/shipa-gh-action@0.0.1
+        env:
+          SHIPA_TOKEN: ${{ secrets.SHIPA_TOKEN }}
+          SHIPA_HOST: ${{ secrets.SHIPA_HOST }}
+          CLUSTER_TOKEN: ${{ secrets.CLUSTER_TOKEN }}
+          CLUSTER_CERTIFICATE: $(CLUSTER_CERTFORMATTED)
+          CLUSTER_ADDRESS:  ${{ secrets.CLUSTER_ADDRESS }}
+        with:
+          shipa-action: './infra/cluster-def.yml'

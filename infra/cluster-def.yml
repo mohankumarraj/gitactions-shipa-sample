@@ -1,0 +1,10 @@
+cluster:
+  name: gha-created-cluster
+  endpoint:
+    addresses: 
+     - https://someKubernetesEndpoint.com:6443
+    caCert: ./infra/ca.crt
+    token: ./infra/token
+  resources:
+    frameworks:
+      name: ["gha-policy"]

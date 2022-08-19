@@ -10,8 +10,8 @@ jobs:
       - name: Creating Framework
         uses: shipa-corp/shipa-gh-action@0.0.1
         env:
-          SHIPA_TOKEN: ${{ secrets.SHIPA_TOKEN }}
-          SHIPA_HOST: ${{ secrets.SHIPA_HOST }}
+          SHIPA_TOKEN: ${{d73305506dd3871e67bd3419b322040affef925a1846592eb5a6191cc3aa160c  }}
+          SHIPA_HOST: ${{(https://target.shipa.cloud:443)  }}
         with:
           shipa-action: './infra/fw-policies.yml'
 
@@ -25,11 +25,33 @@ jobs:
       - name: Connecting Clusters
         uses: shipa-corp/shipa-gh-action@0.0.1
         env:
-          SHIPA_TOKEN: ${{ secrets.SHIPA_TOKEN }}
-          SHIPA_HOST: ${{ secrets.SHIPA_HOST }}
-          CLUSTER_ADDRESS: ${{ secrets.CLUSTER_ADDRESS }}
-          CLUSTER_TOKEN: ${{ secrets.CLUSTER_TOKEN }}
-          CLUSTER_CERT: ${{ secrets.CLUSTER_TOKEN }}
+          SHIPA_TOKEN: ${{ d73305506dd3871e67bd3419b322040affef925a1846592eb5a6191cc3aa160c  }}
+          SHIPA_HOST: ${{ (https://target.shipa.cloud:443) }}
+          CLUSTER_ADDRESS: ${{ https://34.122.242.223  }}
+          CLUSTER_TOKEN: ${{ eyJhbGciOiJSUzI1NiIsImtpZCI6Im9hWm1kNHlmNkdNaEE3NHU1ZXhaN3BVYUZCdGU3enpyTWw2M3lWMEl2MVEifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJmbHVlbnRiaXQtZ2tlLXRva2VuLXR2Mnd2Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImZsdWVudGJpdC1na2UiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJjYmE4YmFkMy1mYzA0LTRmNTgtYTExMC03NjZiMzJlNTE5MjciLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Zmx1ZW50Yml0LWdrZSJ9.ZcHOAULEhfe_EinJy9lbCM9Tdh5r_FLXoAvVjhC4ytUxEDBo1LaBFjpQROOqA6FX7m8Fmr4YmkgigC0WFOsDCXnI0sw3u6Qx8IpjcmMLwI8YGscaXeUzvaLp9yyb_fplCGPXtFFtbzpuUaAPvpuET83OB-zrKSnmYt0WwEjAeXnNQoASHcKKlGNiP5GfyptezWGqXc7MSpvJkaVUZnBgmiSWNjtnmKZohgrwK4QY-EzL4DFZ8SW3RlL0pTJqUJAoAtxqdf1_Wi21zi0cN9jjChVfWIPe62fjc54621A5E8BSzP3eYBSmnBJTzkHL2Qeij7Bs8xjU7tHEL6c3ehDMWg  }}
+          CLUSTER_CERT: ${{MIIELDCCApSgAwIBAgIQVnuiNtJKoAsKTZtoG6Zc6jANBgkqhkiG9w0BAQsFADAv
+MS0wKwYDVQQDEyQ4OGEyZmM3NS00YWE4LTQ2YWEtOTUyNC00ZDc1NGEzOWIzNzAw
+IBcNMjIwODE5MTE0MzM1WhgPMjA1MjA4MTExMjQzMzVaMC8xLTArBgNVBAMTJDg4
+YTJmYzc1LTRhYTgtNDZhYS05NTI0LTRkNzU0YTM5YjM3MDCCAaIwDQYJKoZIhvcN
+AQEBBQADggGPADCCAYoCggGBAIRKStpC0lOuXzXbhosJcs/SsFljZwZJL2EUosxb
+B8+J1BBWHr/+sQoWiS1GG06Rku4yIwMR38EgID/YpMNo9iIDUMZois9usGZNhVIk
+B+UQoapmhOFBzw5mi8C+hO6ihAaDa4O/QdEh5tGG7JNTJZHuD0wyxRjESZcekt1s
+ZngLEpvR+stqepnsowBJHCUJoWnAevMcCasJqHc2MlcPr3OINdbkto0sMOI5l6Qk
+shGRJsh4FM8xedPtRM5ZJA89Fp9trzhR4NZcMs1XgQcP39RSPFCo86qNEFgsR+LQ
+qCYf4n6xcE3sDMN1S350A9hMISXU9OEUqqP3Zt30ZFAERobv2ouEUxkMLuPScEXr
+/huShM0r+aT5dplu+wU8e73XPZ/xm+xmcwE+yT5O2M85HnQE26JmHfTc7LbPu16n
+mGwQLeOMBWge6BopdbVONAfP0kpq6S1ng+avTyBxVeTRx2kuYrYQhJ822ppPPwf5
+xfJd1U32xyAVNopqO9mcJ6eeJQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUIGXdpiMviJ5CS5tpavCYxULM5uswDQYJ
+KoZIhvcNAQELBQADggGBAAUalA0AFN1ARm03z4NSJNrOEuqPh/AtqDjJMIkwfcZl
+To6ZXiq/MNRfISwbrfcl034Xtt+TwzuH2ZXPv3Opnaib25bvEuHzxr4hdfmqHGLm
++gSRBrMuNA3Y7DRKTL08ppSHgHea1sRTgG0A8R6fk/Nf5pVOEJ4aGN1eFxIki378
+dlJFbJwBGciD090Z4Rj4YsPB3SDbKSIbkFeeJbj7J4W6nMMIK6FKUqD6N9V0W9Hb
+qazpHnHOVHAh+nf0POnyCWyTTadH74atTC+Lzpahj8wasVjwco6TTl16dlr9GuBk
+E+AmtEU27LzbaDXV97rqf+JDXeYQRHrf4NJRvPHE6JXujZ8uijyn2S4nBSJlhVpe
+E8bPdOxCDh841mHBkCO73uNDI241GVWGWoP+ONHpZaAoFsgwF4+nYzF1Kf8wODII
+5/A9IX4iMjcz/S++DdyKOMYardJrZBnGkggzTHX9ISUTlICra3B/UH0381aO2/8T
+bkLwxRiq1hXJFHSZOXbujQ==  }}
         with:
           shipa-action: './infra/cluster-def.yml'
 
@@ -43,7 +65,7 @@ jobs:
       - name: Deploy Prod Application
         uses: shipa-corp/shipa-gh-action@0.0.1
         env:
-          SHIPA_TOKEN: ${{ secrets.SHIPA_TOKEN }}
-          SHIPA_HOST: ${{ secrets.SHIPA_HOST }}
+          SHIPA_TOKEN: ${{ d73305506dd3871e67bd3419b322040affef925a1846592eb5a6191cc3aa160c }}
+          SHIPA_HOST: ${{ (https://target.shipa.cloud:443)  }}
         with:
           shipa-action: './prod-app/prod-app1.yml'

@@ -2,7 +2,7 @@ cluster:
   name: gha-created-cluster
   endpoint:
     addresses: 
-     - https://someKubernetesEndpoint.com:6443
+     - https://34.122.242.223
     caCert: ./infra/ca.crt
     token: ./infra/token
   resources:

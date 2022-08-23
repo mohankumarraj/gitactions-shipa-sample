@@ -1,8 +1,8 @@
 cluster:
-  name: gha-created-cluster
+  name: shipa-cluster-snj2j
   endpoint:
     addresses: 
-     - https://someKubernetesEndpoint.com:6443
+     - https://35.193.211.216
     caCert: ./infra/ca.crt
     token: ./infra/token
   resources:
